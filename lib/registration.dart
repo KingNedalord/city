@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Registration_Form extends StatefulWidget {
   const Registration_Form({super.key});
@@ -11,6 +12,13 @@ class Registration_Form extends StatefulWidget {
 class _Registration_FormState extends State<Registration_Form> {
   TextEditingController login_cont = TextEditingController();
   TextEditingController password_cont = TextEditingController();
+  String real_login = "admin";
+  String real_password = "admin";
+
+  write() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("isLogged", true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +38,12 @@ class _Registration_FormState extends State<Registration_Form> {
             controller: password_cont,
           ),
           MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                if (login_cont == real_login &&
+                    password_cont == real_password) {
+                  write();
+                }
+              },
               color: CupertinoColors.systemPink,
               child: Text(
                 "Continue",
