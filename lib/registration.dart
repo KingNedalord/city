@@ -25,23 +25,26 @@ class _Registration_FormState extends State<Registration_Form> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
           TextField(
             decoration: InputDecoration(
-              border: OutlineInputBorder(),
-            ),
+                border: OutlineInputBorder(), hintText: "Login"),
             controller: login_cont,
           ),
           TextField(
             decoration: InputDecoration(
-              border: OutlineInputBorder(),
-            ),
+                border: OutlineInputBorder(), hintText: "Password "),
             controller: password_cont,
+          ),
+          SizedBox(
+            height: 30,
           ),
           MaterialButton(
               onPressed: () {
-                if (login_cont == real_login &&
-                    password_cont == real_password) {
+                if (login_cont.text == real_login &&
+                    password_cont.text == real_password) {
                   write();
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => MyApp()));

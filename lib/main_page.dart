@@ -1,4 +1,6 @@
+import 'package:city/bukhara.dart';
 import 'package:city/cities.dart';
+import 'package:city/samarkand.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,14 +16,14 @@ class _MyAppState extends State<MyApp> {
     HistoricalCities(
         image: "https://img.geliophoto.com/samarkand/00_samarkand.jpg",
         name: "Samarkand",
-        route: "/s",
+        route: Samarkand(),
         content:
         "Общая площадь территории города составляет 123,82 км²[3]. Численность населения по состоянию на 1 января 2023 года составляла 573,2 тыс.[5]"),
     HistoricalCities(
         image:
         "https://www.gold-volga.ru/system/areas/73316/photos/1020x700/16104566532322366.jpg",
         name: "Bukhara",
-        route: "/b",
+        route: Bukhara(),
         content:
         "Бухара́ (узб. Buxoro) — один из древнейших городов Центральной Азии, административный центр Бухарской области Узбекистана; архитектурный и историко-культурный заповедник")
   ];
@@ -41,7 +43,7 @@ class _MyAppState extends State<MyApp> {
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, cities[index].route);
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=> cities[index].route));
                   },
                   child: Container(
                     decoration: BoxDecoration(
