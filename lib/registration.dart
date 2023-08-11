@@ -1,3 +1,4 @@
+import 'package:city/main_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -42,6 +43,8 @@ class _Registration_FormState extends State<Registration_Form> {
                 if (login_cont == real_login &&
                     password_cont == real_password) {
                   write();
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => MyApp()));
                 }
               },
               color: CupertinoColors.systemPink,

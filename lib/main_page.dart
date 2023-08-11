@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(titleTextStyle: TextStyle(fontFamily: "EBG"),
           title: Text("GridView"),
         ),
         body: GridView.builder(

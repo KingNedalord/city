@@ -16,6 +16,11 @@ void main() async{
   bool isLogged = await prefs.getBool("isLogged") ?? false;
   runApp(MaterialApp(
     home: isLogged == true ? MyApp():Registration_Form(),
+    routes: {
+      "/": (context) => MyApp(),
+      "/b": (context) => Bukhara(),
+      "/s": (context) => Samarkand()
+    },
     debugShowCheckedModeBanner: false,
   ));
 }
