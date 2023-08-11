@@ -10,6 +10,13 @@ class Samarkand extends StatefulWidget {
 class _SamarkandState extends State<Samarkand> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Welcome to Samarkand",
+          style: TextStyle(fontFamily: "EBG"),
+        ),
+      ),
+    );
   }
 }

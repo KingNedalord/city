@@ -10,6 +10,11 @@ class Bukhara extends StatefulWidget {
 class _BukharaState extends State<Bukhara> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(appBar: AppBar(
+      title: Text(
+        "Welcome to Bukhara",
+        style: TextStyle(fontFamily: "EBG"),
+      ),
+    ),);
   }
 }
